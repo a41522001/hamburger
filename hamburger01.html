@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .hamburger{
+            display: none;
+            padding: 15px;
+            position: fixed;
+            top: 5px;
+            left: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .hamburger .bar{
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+        }
+        #toggle{
+            display: none;
+        }
+        header{
+            display: flex;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+        .navbar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f3f3;
+            padding: 15px 0;
+        }
+        .navbar ul{
+            display: flex;
+            list-style: none;
+        }
+        .navbar ul li{
+            margin: 0 30px;
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            color: #111;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            background-color: #f3f3f3;
+            padding: 0 10px;
+        }
+        .logo .pic{
+            width: 50px;
+            height: 50px;
+        }
+        .logo .pic img{
+            width: 100%;
+            height: 100%;
+        }
+        .logo .txt{
+            margin-left: 10px;
+        }
+        @media (max-width: 600px) {
+            .hamburger{
+                display: inline-block;
+            }
+            #toggle:checked + .navbar{
+                transform: translateX(0);
+            }
+            header{
+                justify-content: flex-end;
+            }
+            header .logo{
+                margin-left: 80px;
+            }
+            .navbar{
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                justify-content: flex-start;
+                transform: translateX(-100%);
+                transition: transform .5s;
+            }
+            .navbar ul{
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+            }
+            .navbar ul li{
+                margin: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <label for="toggle" class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </label>
+    
+    <header>
+        <input type="checkbox" name="" id="toggle">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">產品</a></li>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">聯絡我們</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <div class="pic">
+                <img src="./S__33734659.jpg" alt="">
+            </div>
+            <div class="txt">
+                <p>MARU公司</p>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
