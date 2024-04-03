@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>漢堡選單</title>
     <style>
         *{
             margin: 0;
@@ -35,7 +36,7 @@
             padding: 10px 0;
             background-color: #f3f3f3;
             justify-content: center;
-            flex-direction: row-reverse;
+            /* flex-direction: row-reverse; */
         }
         .navbar{
             display: flex;
@@ -60,6 +61,7 @@
             align-items: center;
             background-color: #f3f3f3;
             padding: 0 10px;
+            order: -1;
         }
         .logo .pic{
             width: 50px;
@@ -72,6 +74,39 @@
         .logo .txt{
             margin-left: 10px;
         }
+        .search{
+            display: flex;
+            align-items: center;
+            width: 200px;
+            position: relative;
+        }
+        .search input[type=text]{
+            width: 100%;
+            height: 25px;
+            border: none;
+            background-color: #8c91a18e;
+            padding: 0 5px;
+            border-radius: 8px;
+        }
+        .search .pic{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 16px;
+            right: 0;
+        }
+        .search .pic img{
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 800px) {
+            .navbar ul li{
+                margin: 0 15px;
+            }
+            .search{
+                width: 120px;
+            }
+        }
         @media (max-width: 600px) {
             .hamburger{
                 display: inline-block;
@@ -80,10 +115,12 @@
                 transform: translateX(0);
             }
             header{
-                justify-content: flex-end;
+                justify-content: space-between;
             }
             header .logo{
-                margin-left: 100px;
+                margin-left: 50px;
+                position: relative;
+                z-index: 3;
             }
             .navbar{
                 flex-direction: column;
@@ -102,6 +139,15 @@
             }
             .navbar ul li{
                 margin: 20px;
+            }
+            .search{
+                width: 150px;
+                margin-right: 10px;
+            }
+        }
+        @media (max-width: 400px) {
+            .search{
+                width: 120px;
             }
         }
     </style>
@@ -125,12 +171,18 @@
         </nav>
         <div class="logo">
             <div class="pic">
-                <img src="https://a41522001.github.io/hamburger/maru.jpg" alt="">
+                <img src="./maru.jpg" alt="">
             </div>
             <div class="txt">
                 <p>MARU公司</p>
             </div>
         </div>
+        <div class="search">
+            <input type="text" name="" id="" placeholder="請輸入搜尋內容">
+            <div class="pic">
+                <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png " alt="">
+            </div>
+        </div>     
     </header>
 </body>
 </html>
